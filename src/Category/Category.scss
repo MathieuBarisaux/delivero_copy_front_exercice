@@ -1,0 +1,9 @@
+.Category {
+  margin: 1rem 0;
+  width: 100%;
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

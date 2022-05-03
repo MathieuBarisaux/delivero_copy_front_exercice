@@ -1,0 +1,18 @@
+.BannerRestaurant {
+  padding: 1.9rem 0rem;
+  display: flex;
+  align-items: center;
+
+  &__left {
+    p {
+      margin-top: 1.8rem;
+      font-size: 1.2rem;
+    }
+  }
+
+  img {
+    width: 352px;
+    margin-left: 2rem;
+    border-radius: 5px;
+  }
+}

@@ -1,0 +1,115 @@
+.Basket {
+  position: sticky;
+  top: 30px;
+  margin-top: 30px;
+  padding: 0.6rem;
+  background-color: #fff;
+  height: fit-content;
+  border-radius: 10px;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+
+  button {
+    font-size: 1rem;
+    white-space: nowrap;
+    padding: 1rem 6rem;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 0.5rem;
+    background-color: #bac3c3;
+    color: #8a9a9a;
+    cursor: pointer;
+  }
+
+  .btn-validate {
+    background-color: #03cdbc;
+    color: white;
+  }
+
+  &__empty {
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.BasketContainer {
+  &__dishs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0rem;
+
+    > p:nth-child(2) {
+      justify-self: flex-start;
+      flex: 1;
+    }
+
+    > p:nth-child(3) {
+      white-space: nowrap;
+    }
+
+    > p {
+      color: #2f3233;
+    }
+
+    &--tools {
+      display: flex;
+
+      div:last-child {
+        margin-right: 0.5rem;
+      }
+
+      div:first-child,
+      div:last-child {
+        cursor: pointer;
+        width: 1rem;
+        height: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 1px solid #03cdbc;
+
+        p {
+          color: #03cdbc;
+        }
+      }
+
+      p:nth-child(2) {
+        margin: 0 0.2rem;
+      }
+    }
+  }
+
+  &__pricing {
+    padding: 1rem 0;
+    border-top: 1px solid #ced2d3;
+    border-bottom: 1px solid #ced2d3;
+
+    > div {
+      display: flex;
+      justify-content: space-between;
+
+      > p {
+        color: #2f3233;
+      }
+    }
+
+    > div:first-child {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  > div:last-child {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+
+    > p {
+      color: #2f3233;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+  }
+}

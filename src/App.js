@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
+
+import axios from "axios";
+
+import { useState, useEffect } from "react";
+
+import Header from "./Header/Header";
+import BannerRestaurant from "./BannerRestaurant/BannerRestaurant";
+
+import Main from "./Main/Main";
 
 function App() {
+  const [restaurants, setRestaurants] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    const callForRestaurant = async () => {
+      try {
+        const response = await axios.get("http://localhost:3001/");
+        setRestaurants(response.data);
+        setIsLoading(true);
+      } catch (error) {
+        console.log(error.response);
+      }
+    };
+    callForRestaurant();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <BannerRestaurant isLoading={isLoading} restaurants={restaurants} />
+      <Main isLoading={isLoading} restaurants={restaurants} />
+    </>
   );
 }
 
